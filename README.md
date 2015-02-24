@@ -1,2 +1,2 @@
-AngleCmsCoreBundle
-==================
+AngleCommonUtilityBundle
+========================
