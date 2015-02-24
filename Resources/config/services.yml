@@ -1,8 +1,0 @@
-services:
-    app.twig_extension:
-        class: Angle\Common\UtilityBundle\Twig\AmazonS3UrlExtension
-        public: false
-        arguments:
-            - { bucket_url: %cdn_prefix_url% }
-        tags:
-            - { name: twig.extension }
