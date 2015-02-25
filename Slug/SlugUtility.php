@@ -175,15 +175,29 @@ class SlugUtility
      * Return a URL safe version of a string.
      *
      * @param string $string
+     * @param integer $length
      * @param string $separator
      *
      * @return string
      */
-    public static function slugify($string, $separator = '-')
+    public static function slugify($string, $length = 40, $separator = '-')
     {
+        // Apply conversion rules to use only the english alphabet
         $string = strtolower(strtr($string, self::$rules));
+
+        // Replace all other characters with a hyphen
         $string = preg_replace('/([^a-z0-9]|-)+/', $separator, $string);
+
+        // i have no idea why we have this here
         $string = strtolower($string);
+
+        // Cut the string to the max length
+        $string = substr($string, 0, $length);
+
+        // Trim the string in case it was cut on a hyphen
+        $string = rtrim($string, '-');
+
+        // TODO: Use wordwrap() to cut more nicely
 
         return trim($string, $separator);
     }
