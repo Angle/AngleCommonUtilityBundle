@@ -20,7 +20,12 @@ class AmazonS3UrlTwigExtension extends \Twig_Extension
 
     public function s3UrlFilter($s3Key)
     {
-        $url = $this->bucketUrl . $s3Key;
+        if ($s3Key) {
+            $url = $this->bucketUrl . $s3Key;
+        } else {
+            $url = '#';
+        }
+
         return $url;
     }
 
