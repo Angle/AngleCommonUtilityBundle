@@ -172,7 +172,7 @@ class SlugUtility
     );
 
     /**
-     * Return a URL safe version of a string.
+     * Return a URL safe version of a string, in lowercase
      *
      * @param string $string
      * @param integer $length
@@ -190,6 +190,36 @@ class SlugUtility
 
         // i have no idea why we have this here
         $string = strtolower($string);
+
+        // Cut the string to the max length
+        $string = substr($string, 0, $length);
+
+        // Trim the string in case it was cut on a hyphen
+        $string = rtrim($string, '-');
+
+        // TODO: Use wordwrap() to cut more nicely
+
+        return trim($string, $separator);
+    }
+
+    /**
+     * Return a URL safe version of a string, in uppercase
+     *
+     * @param string $string
+     * @param integer $length
+     * @param string $separator
+     * @return string
+     */
+    public static function slugifyUpper($string, $length = 40, $separator = '-')
+    {
+        // Apply conversion rules to use only the english alphabet
+        $string = strtoupper(strtr($string, self::$rules));
+
+        // Replace all other characters with a hyphen
+        $string = preg_replace('/([^A-Z0-9]|-)+/', $separator, $string);
+
+        // i have no idea why we have this here
+        $string = strtoupper($string);
 
         // Cut the string to the max length
         $string = substr($string, 0, $length);
