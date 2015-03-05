@@ -1,7 +1,17 @@
 <?php
 
-namespace Angle\Common\UtilityBundle\Random;
+namespace Angle\Common\UtilityBundle\Random_deprecated;
 
+
+/**
+ * DEPRECATED IN FAVOR OF ANOTHER METHOD USING THE MCRYPT EXTENSION
+ * Reference: https://defuse.ca/generating-random-passwords.htm
+ *
+ * Class RandomUtility
+ * @package Angle\Common\UtilityBundle\Random
+ *
+ * @deprecated
+ */
 class RandomUtility
 {
     /**
