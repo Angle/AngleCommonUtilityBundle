@@ -231,4 +231,9 @@ class SlugUtility
 
         return trim($string, $separator);
     }
+
+    public static function unslugify($slug)
+    {
+        return str_replace('-', ' ', $slug);
+    }
 } 
