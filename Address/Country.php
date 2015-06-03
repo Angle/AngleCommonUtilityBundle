@@ -9,7 +9,7 @@ abstract class Country
      * Using ISO 3166-2
      * @return array
      */
-    private static $regions;
+    protected static $regions;
 
     /**
      * Supported Regions

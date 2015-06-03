@@ -10,7 +10,7 @@ class US extends Country
      * @inheritDoc
      * @var array
      */
-    private static $regions = array(
+    protected static $regions = array(
         // empty.
     );
 }

@@ -10,7 +10,7 @@ class MX extends Country
      * @inheritDoc
      * @var array
      */
-    private static $regions = array(
+    protected static $regions = array(
         'MX-AGU' => 'Aguascalientes',
         'MX-BCN' => 'Baja California',
         'MX-BCS' => 'Baja California Sur',
