@@ -20,4 +20,13 @@ abstract class Country
     {
         return static::$regions;
     }
+
+    public static function getRegionName($region)
+    {
+        if (array_key_exists($region, static::$regions)) {
+            return static::$regions[$region];
+        }
+
+        return 'Desconocido';
+    }
 }
