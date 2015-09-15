@@ -11,7 +11,6 @@ class AddressUtility
      */
     private static $countries = array
     (
-        ' '  => 'Select a country',
         'AF' => 'Afghanistan',
         'AX' => 'Aland Islands',
         'AL' => 'Albania',
@@ -267,8 +266,6 @@ class AddressUtility
      * @var array
      */
     private static $countriesMX = array(
-        'DE' => 'Alemania',
-        'AR' => 'Argentina',
         'MX' => 'México',
         'US' => 'Estados Unidos',
         'CA' => 'Canadá',
