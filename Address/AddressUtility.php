@@ -11,6 +11,7 @@ class AddressUtility
      */
     private static $countries = array
     (
+        ' '  => 'Select a country',
         'AF' => 'Afghanistan',
         'AX' => 'Aland Islands',
         'AL' => 'Albania',
