@@ -282,6 +282,18 @@ class AddressUtility
     }
 
     /**
+     * Get Supported Countries as an array with default value
+     * Using 2 letter codes: ISO 3166-1 alpha-2
+     * @return array
+     */
+    public static function getAvailableCountriesWithDefault()
+    {
+        $countries = self::$countries;
+        $countries[' '] = 'Select a country';
+        return $countries;
+    }
+
+    /**
      * Get Supported regions (ISO 3166-2) in a country as an array
      * @param string $code using ISO 3166-1 alpha-2
      * @return array
