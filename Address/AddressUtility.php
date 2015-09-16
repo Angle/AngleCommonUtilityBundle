@@ -288,9 +288,8 @@ class AddressUtility
      */
     public static function getAvailableCountriesWithDefault()
     {
-        $countries = self::$countries;
-        $countries[' '] = 'Select a country';
-        return $countries;
+        $default = array(' ' => 'Select a country');
+        return $default + self::$countries;
     }
 
     /**
