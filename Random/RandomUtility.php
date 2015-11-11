@@ -29,16 +29,29 @@ class RandomUtility
         $printable = "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
         return self::getCustomPassword(str_split($printable), $length);
     }
+
     public static function getAlphaNumericPassword($length)
     {
         $alphanum = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         return self::getCustomPassword(str_split($alphanum), $length);
     }
+
+    public static function getAlphabetPassword($length, $lower=true)
+    {
+        if ($lower) {
+            $alphanum = "abcdefghijklmnopqrstuvwxyz";
+        } else {
+            $alphanum = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        }
+        return self::getCustomPassword(str_split($alphanum), $length);
+    }
+
     public static function getHexPassword($length)
     {
         $hex = "0123456789ABCDEF";
         return self::getCustomPassword(str_split($hex), $length);
     }
+
     /*
      * Create a random password composed of a custom character set.
      * $characterSet - An *array* of strings the password can be composed of.
