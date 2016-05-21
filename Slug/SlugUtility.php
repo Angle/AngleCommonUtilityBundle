@@ -172,6 +172,17 @@ class SlugUtility
     );
 
     /**
+     * Return a string that only uses the english alphabet
+     *
+     * @param $string
+     * @return string
+     */
+    public static function toEnglishAlphabet($string)
+    {
+        return strtr($string, self::$rules);
+    }
+
+    /**
      * Return a URL safe version of a string, in lowercase
      *
      * @param string $string
