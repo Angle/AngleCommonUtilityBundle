@@ -48,7 +48,7 @@ class RandomUtility
 
     public static function getHexPassword($length)
     {
-        $hex = "0123456789ABCDEF";
+        $hex = "0123456789abcdef";
         return self::getCustomPassword(str_split($hex), $length);
     }
 
