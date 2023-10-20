@@ -1,5 +1,5 @@
 {
-    "name": "angle/common/utility-bundle",
+    "name": "angle/common-utility-bundle",
     "description": "Common utilities and snippets bundle for Symfony2",
     "type": "symfony-bundle",
     "keywords": [
